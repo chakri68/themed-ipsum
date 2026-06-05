@@ -9,7 +9,10 @@
     "They told the {noun} to {verb}, but it stayed {adjective}.",
     "A {adjective} {noun} is still a {noun} at the end of the day.",
     "I tried to {verb}, but {place} had other plans.",
-    "Honestly? The {noun} just wanted to {verb} {adverb}."
+    "Honestly? The {noun} just wanted to {verb} {adverb}.",
+    "When the {noun} starts to {verb}, you know it's going to be {adjective}.",
+    "No one talks about the {adjective} {noun} hiding in {place}.",
+    "First came the {noun}, then came the overwhelming urge to {verb}."
   ],
   "themes": [
     {
@@ -18,31 +21,87 @@
       "blurb": "Standups, deploys, and the cache that never clears.",
       "words": {
         "noun": [
-          "deploy", "bug", "cache", "backend", "frontend", "merge conflict",
-          "pull request", "intern", "linter", "stack trace", "race condition",
-          "hotfix", "rollback", "staging server", "rubber duck"
+          "deploy",
+          "bug",
+          "cache",
+          "backend",
+          "frontend",
+          "merge conflict",
+          "pull request",
+          "intern",
+          "linter",
+          "stack trace",
+          "race condition",
+          "hotfix",
+          "rollback",
+          "staging server",
+          "rubber duck",
+          "spaghetti code",
+          "memory leak"
         ],
         "adjective": [
-          "flaky", "deprecated", "undocumented", "legacy", "async",
-          "blocking", "over-engineered", "unhinged", "production-ready", "cursed"
+          "flaky",
+          "deprecated",
+          "undocumented",
+          "legacy",
+          "async",
+          "blocking",
+          "over-engineered",
+          "unhinged",
+          "production-ready",
+          "cursed",
+          "brittle",
+          "hardcoded"
         ],
         "verb": [
-          "deploy", "refactor", "rollback", "compile", "merge", "ship",
-          "git blame", "force-push", "rebase", "yeet to prod", "ssh in"
+          "deploy",
+          "refactor",
+          "rollback",
+          "compile",
+          "merge",
+          "ship",
+          "git blame",
+          "force-push",
+          "rebase",
+          "yeet to prod",
+          "ssh in",
+          "segfault",
+          "timeout"
         ],
         "adverb": [
-          "silently", "in production", "on a Friday", "without tests",
-          "at 2 AM", "with confidence", "somehow"
+          "silently",
+          "in production",
+          "on a Friday",
+          "without tests",
+          "at 2 AM",
+          "with confidence",
+          "somehow",
+          "recursively",
+          "asynchronously"
         ],
         "place": [
-          "the staging server", "a forgotten repo", "the CI pipeline",
-          "main branch", "the standup", "node_modules", "the incident channel"
+          "the staging server",
+          "a forgotten repo",
+          "the CI pipeline",
+          "main branch",
+          "the standup",
+          "node_modules",
+          "the incident channel",
+          "localhost",
+          "a Docker container"
         ]
       },
       "templates": [
         "It works on {place}, so we shipped it {adverb}.",
         "The {noun} passed review, then chose to {verb} {adverb}.",
-        "Reverted the {noun}; turns out {place} was {adjective}."
+        "Reverted the {noun}; turns out {place} was {adjective}.",
+        "Who let the {noun} {verb} {adverb}?",
+        "My {noun} is {adjective}, but at least it didn't {verb}.",
+        "Just spent three hours trying to {verb} a {adjective} {noun}.",
+        "If the {noun} breaks in {place}, just {verb} it {adverb}.",
+        "Another day, another {adjective} {noun} refusing to {verb}.",
+        "We decided to {verb} the {noun}, and now {place} is on fire.",
+        "The true meaning of DevOps is watching a {noun} {verb} {adverb}."
       ]
     },
     {
@@ -51,30 +110,85 @@
       "blurb": "Lorem ipsum, but it stares into the void with you.",
       "words": {
         "noun": [
-          "moon", "silence", "void", "memory", "dream", "dust", "echo",
-          "shadow", "tide", "horizon", "stranger", "ache", "ember", "stillness"
+          "moon",
+          "silence",
+          "void",
+          "memory",
+          "dream",
+          "dust",
+          "echo",
+          "shadow",
+          "tide",
+          "horizon",
+          "stranger",
+          "ache",
+          "ember",
+          "stillness",
+          "ghost",
+          "ruin"
         ],
         "adjective": [
-          "cosmic", "weightless", "fading", "infinite", "hollow", "quiet",
-          "tender", "unhinged", "borrowed", "endless", "half-remembered"
+          "cosmic",
+          "weightless",
+          "fading",
+          "infinite",
+          "hollow",
+          "quiet",
+          "tender",
+          "unhinged",
+          "borrowed",
+          "endless",
+          "half-remembered",
+          "fleeting",
+          "shattered"
         ],
         "verb": [
-          "disappear", "drift", "dissolve", "remember", "let go", "wander",
-          "unravel", "surrender", "begin again", "forget", "exhale"
+          "disappear",
+          "drift",
+          "dissolve",
+          "remember",
+          "let go",
+          "wander",
+          "unravel",
+          "surrender",
+          "begin again",
+          "forget",
+          "exhale",
+          "linger",
+          "shatter"
         ],
         "adverb": [
-          "slowly", "eventually", "without warning", "all at once", "gently",
-          "in the dark", "for no reason"
+          "slowly",
+          "eventually",
+          "without warning",
+          "all at once",
+          "gently",
+          "in the dark",
+          "for no reason",
+          "in absolute silence",
+          "inevitably"
         ],
         "place": [
-          "the edge of sleep", "a quiet ocean", "the space between stars",
-          "an empty room", "the last hour of night", "nowhere in particular"
+          "the edge of sleep",
+          "a quiet ocean",
+          "the space between stars",
+          "an empty room",
+          "the last hour of night",
+          "nowhere in particular",
+          "the ruins of tomorrow"
         ]
       },
       "templates": [
         "The {noun} does not ask to {verb}; it simply does.",
         "Between the {noun} and the {noun}, only {place} remains.",
-        "We are all just {adjective} {noun}, learning to {verb}."
+        "We are all just {adjective} {noun}, learning to {verb}.",
+        "To {verb} a {noun} is to invite {place} inside.",
+        "Sometimes, a {adjective} {noun} is all we have left.",
+        "I watched the {noun} {verb}, and suddenly {place} felt {adjective}.",
+        "There is a {adjective} {noun} in {place} that will never {verb}.",
+        "Why does the {noun} always {verb} when we are {adverb}?",
+        "We wait in {place} for the {noun} to finally {verb}.",
+        "Every {adjective} {noun} is just a reminder to {verb}."
       ]
     },
     {
@@ -83,32 +197,86 @@
       "blurb": "Chai, autos, monsoons, and a signal that never comes.",
       "words": {
         "noun": [
-          "chai", "auto", "biryani", "hostel", "monsoon", "signal", "uncle",
-          "ration", "scooty", "samosa", "load-shedding", "wedding", "neighbour",
-          "WhatsApp forward", "watchman"
+          "chai",
+          "auto",
+          "biryani",
+          "hostel",
+          "monsoon",
+          "signal",
+          "uncle",
+          "ration",
+          "scooty",
+          "samosa",
+          "load-shedding",
+          "wedding",
+          "neighbour",
+          "WhatsApp forward",
+          "watchman",
+          "jalebi",
+          "traffic cop"
         ],
         "adjective": [
-          "dramatic", "overcooked", "sleepy", "extra", "jugaad", "spicy",
-          "monsoon-soaked", "unhinged", "filmy", "over-caffeinated"
+          "dramatic",
+          "overcooked",
+          "sleepy",
+          "extra",
+          "jugaad",
+          "spicy",
+          "monsoon-soaked",
+          "unhinged",
+          "filmy",
+          "over-caffeinated",
+          "nosy",
+          "kanjoos"
         ],
         "verb": [
-          "vibe", "honk", "negotiate", "disappear", "gossip", "marinate",
-          "queue up", "argue", "bargain", "show up uninvited", "overthink"
+          "vibe",
+          "honk",
+          "negotiate",
+          "disappear",
+          "gossip",
+          "marinate",
+          "queue up",
+          "argue",
+          "bargain",
+          "show up uninvited",
+          "overthink",
+          "complain",
+          "stare"
         ],
         "adverb": [
-          "dramatically", "before lunch", "during the power cut", "as always",
-          "with full masala", "at the wedding", "loudly"
+          "dramatically",
+          "before lunch",
+          "during the power cut",
+          "as always",
+          "with full masala",
+          "at the wedding",
+          "loudly",
+          "without indicator",
+          "out of syllabus"
         ],
         "place": [
-          "Bangalore traffic", "the hostel corridor", "the chai tapri",
-          "a sweaty local train", "the society WhatsApp group",
-          "the back of an auto", "a wedding buffet"
+          "Bangalore traffic",
+          "the hostel corridor",
+          "the chai tapri",
+          "a sweaty local train",
+          "the society WhatsApp group",
+          "the back of an auto",
+          "a wedding buffet",
+          "Silk Board junction"
         ]
       },
       "templates": [
         "The {noun} at {place} was {adjective}, naturally.",
         "Uncle saw the {noun} and decided to {verb} {adverb}.",
-        "Only in {place} can a {noun} be this {adjective}."
+        "Only in {place} can a {noun} be this {adjective}.",
+        "Did you hear? The {noun} managed to {verb} {adverb}!",
+        "In {place}, a {adjective} {noun} is just a Tuesday.",
+        "My neighbour's {noun} is always trying to {verb} {adverb}.",
+        "You cannot survive {place} without a {adjective} {noun}.",
+        "I was about to {verb}, but the {noun} got {adjective}.",
+        "Trust me, a {adjective} {noun} in {place} will always {verb}.",
+        "Even the {noun} knows better than to {verb} {adverb}."
       ]
     },
     {
@@ -117,33 +285,86 @@
       "blurb": "Let's circle back and synergize on this offline.",
       "words": {
         "noun": [
-          "synergy", "stakeholder", "roadmap", "deck", "KPI", "deliverable",
-          "bandwidth", "low-hanging fruit", "alignment", "touchpoint", "north star",
-          "all-hands", "quick win", "value-add", "action item"
+          "synergy",
+          "stakeholder",
+          "roadmap",
+          "deck",
+          "KPI",
+          "deliverable",
+          "bandwidth",
+          "low-hanging fruit",
+          "alignment",
+          "touchpoint",
+          "north star",
+          "all-hands",
+          "quick win",
+          "value-add",
+          "action item",
+          "pivot",
+          "paradigm shift"
         ],
         "adjective": [
-          "scalable", "actionable", "cross-functional", "results-driven",
-          "best-in-class", "agile", "data-driven", "mission-critical",
-          "frictionless", "holistic"
+          "scalable",
+          "actionable",
+          "cross-functional",
+          "results-driven",
+          "best-in-class",
+          "agile",
+          "data-driven",
+          "mission-critical",
+          "frictionless",
+          "holistic",
+          "impactful",
+          "disruptive"
         ],
         "verb": [
-          "circle back", "leverage", "ideate", "operationalize", "double-click",
-          "socialize", "right-size", "unpack", "move the needle", "loop in",
-          "take offline"
+          "circle back",
+          "leverage",
+          "ideate",
+          "operationalize",
+          "double-click",
+          "socialize",
+          "right-size",
+          "unpack",
+          "move the needle",
+          "loop in",
+          "take offline",
+          "streamline",
+          "synergize"
         ],
         "adverb": [
-          "going forward", "at scale", "by EOD", "holistically", "proactively",
-          "at a high level", "in this economy"
+          "going forward",
+          "at scale",
+          "by EOD",
+          "holistically",
+          "proactively",
+          "at a high level",
+          "in this economy",
+          "out of the box",
+          "synergistically"
         ],
         "place": [
-          "the Q3 roadmap", "the parking lot", "a breakout room",
-          "the all-hands", "the shared drive", "next sprint", "the steering committee"
+          "the Q3 roadmap",
+          "the parking lot",
+          "a breakout room",
+          "the all-hands",
+          "the shared drive",
+          "next sprint",
+          "the steering committee",
+          "a mandatory fun event"
         ]
       },
       "templates": [
         "Let's {verb} on the {noun} {adverb}.",
         "Per my last email, the {noun} remains {adjective}.",
-        "We need to {verb} before we can {verb} the {noun}."
+        "We need to {verb} before we can {verb} the {noun}.",
+        "Let's put the {adjective} {noun} in {place} and {verb}.",
+        "To optimize the {noun}, we must {verb} {adverb}.",
+        "Please ensure the {noun} can {verb} {adverb}.",
+        "If we {verb} the {noun}, {place} will finally become {adjective}.",
+        "The leadership team wants the {noun} to {verb} in {place}.",
+        "Is there enough bandwidth for the {noun} to {verb} {adverb}?",
+        "A {adjective} {noun} is critical if we want to {verb}."
       ]
     },
     {
@@ -152,31 +373,86 @@
       "blurb": "It's giving unhinged. No cap, this one ate.",
       "words": {
         "noun": [
-          "rizz", "vibe", "main character", "icon", "situationship", "aura",
-          "glow-up", "red flag", "soft launch", "delulu", "NPC", "side quest",
-          "ick", "lore", "beige flag"
+          "rizz",
+          "vibe",
+          "main character",
+          "icon",
+          "situationship",
+          "aura",
+          "glow-up",
+          "red flag",
+          "soft launch",
+          "delulu",
+          "NPC",
+          "side quest",
+          "ick",
+          "lore",
+          "beige flag",
+          "canon event",
+          "gaslight"
         ],
         "adjective": [
-          "iconic", "unhinged", "lowkey", "valid", "feral", "mid", "ate",
-          "demure", "delulu", "bussin"
+          "iconic",
+          "unhinged",
+          "lowkey",
+          "valid",
+          "feral",
+          "mid",
+          "ate",
+          "demure",
+          "delulu",
+          "bussin",
+          "sus",
+          "based"
         ],
         "verb": [
-          "slay", "ghost", "gatekeep", "manifest", "spiral", "vibe check",
-          "touch grass", "rizz up", "soft launch", "live laugh love", "understand the assignment"
+          "slay",
+          "ghost",
+          "gatekeep",
+          "manifest",
+          "spiral",
+          "vibe check",
+          "touch grass",
+          "rizz up",
+          "soft launch",
+          "live laugh love",
+          "understand the assignment",
+          "flop",
+          "ratio"
         ],
         "adverb": [
-          "fr fr", "no cap", "lowkey", "highkey", "respectfully", "in this essay",
-          "and it shows"
+          "fr fr",
+          "no cap",
+          "lowkey",
+          "highkey",
+          "respectfully",
+          "in this essay",
+          "and it shows",
+          "ironically",
+          "rent-free"
         ],
         "place": [
-          "the group chat", "my fyp", "the comments", "a random Tuesday",
-          "her finsta", "the vibe", "the timeline"
+          "the group chat",
+          "my fyp",
+          "the comments",
+          "a random Tuesday",
+          "her finsta",
+          "the vibe",
+          "the timeline",
+          "the drafts"
         ]
       },
       "templates": [
         "Not the {noun} being this {adjective} {adverb}.",
         "The {noun} is giving {adjective}, {adverb}.",
-        "It's the {adjective} {noun} for me, {adverb}."
+        "It's the {adjective} {noun} for me, {adverb}.",
+        "Me when the {noun} decides to {verb}: {adjective}.",
+        "POV: you're a {adjective} {noun} in {place}.",
+        "Catch me in {place} trying to {verb} my {adjective} {noun}.",
+        "The urge to {verb} this {noun} is honestly {adjective}.",
+        "If your {noun} doesn't {verb}, it's a beige flag {adverb}.",
+        "We love a {adjective} {noun} that knows how to {verb}.",
+        "Literally just saw a {noun} {verb} in {place}, I'm shaking."
       ]
     },
     {
@@ -185,33 +461,83 @@
       "blurb": "Of dragons, prophecies, and the long road to the keep.",
       "words": {
         "noun": [
-          "prophecy", "dragon", "blade", "kingdom", "oath", "shadow", "relic",
-          "wanderer", "throne", "rune", "wyrm", "tavern", "omen", "spellbook",
-          "crown"
+          "prophecy",
+          "dragon",
+          "blade",
+          "kingdom",
+          "oath",
+          "shadow",
+          "relic",
+          "wanderer",
+          "throne",
+          "rune",
+          "wyrm",
+          "tavern",
+          "omen",
+          "spellbook",
+          "crown",
+          "grimoire",
+          "paladin"
         ],
         "adjective": [
-          "ancient", "cursed", "forsaken", "weary", "ironbound", "fabled",
-          "doomed", "valiant", "sundered", "moonlit"
+          "ancient",
+          "cursed",
+          "forsaken",
+          "weary",
+          "ironbound",
+          "fabled",
+          "doomed",
+          "valiant",
+          "sundered",
+          "moonlit",
+          "blood-forged",
+          "eldritch"
         ],
         "verb": [
-          "ride north", "draw steel", "break the siege", "swear the oath",
-          "betray the crown", "wake the dragon", "cross the marches", "kindle the beacon",
-          "ford the river", "hold the line"
+          "ride north",
+          "draw steel",
+          "break the siege",
+          "swear the oath",
+          "betray the crown",
+          "wake the dragon",
+          "cross the marches",
+          "kindle the beacon",
+          "ford the river",
+          "hold the line",
+          "cast the spell"
         ],
         "adverb": [
-          "at dawn", "before the frost", "without mercy", "ere the moon rose",
-          "in the old tongue", "for the realm", "come what may"
+          "at dawn",
+          "before the frost",
+          "without mercy",
+          "ere the moon rose",
+          "in the old tongue",
+          "for the realm",
+          "come what may",
+          "under the blood moon"
         ],
         "place": [
-          "the Ironwood", "a ruined keep", "the misty marches",
-          "the dragon's hoard", "the last tavern", "the frozen pass",
-          "the shadowed vale"
+          "the Ironwood",
+          "a ruined keep",
+          "the misty marches",
+          "the dragon's hoard",
+          "the last tavern",
+          "the frozen pass",
+          "the shadowed vale",
+          "the high citadel"
         ]
       },
       "templates": [
         "The {adjective} {noun} called them to {verb} {adverb}.",
         "In {place}, a {noun} would {verb}, {adverb}.",
-        "They say the {noun} is {adjective}, but still it must {verb}."
+        "They say the {noun} is {adjective}, but still it must {verb}.",
+        "A {adjective} {noun} was forged in {place} to {verb}.",
+        "Beware the {noun} that tries to {verb} {adverb}.",
+        "None who enter {place} can {verb} the {adjective} {noun}.",
+        "The {noun} shall {verb} {adverb}, as foretold by the elders.",
+        "The {adjective} {noun} must {verb} before the frost arrives.",
+        "Legends speak of a {noun} that would {verb} in {place}.",
+        "Only a fool would {verb} a {adjective} {noun} {adverb}."
       ]
     },
     {
@@ -220,33 +546,307 @@
       "blurb": "She walked in like trouble in a rain-soaked coat.",
       "words": {
         "noun": [
-          "dame", "case", "alibi", "cigarette", "whiskey", "detective", "racket",
-          "informant", "trench coat", "revolver", "shadow", "headline",
-          "double-cross", "lead"
+          "dame",
+          "case",
+          "alibi",
+          "cigarette",
+          "whiskey",
+          "detective",
+          "racket",
+          "informant",
+          "trench coat",
+          "revolver",
+          "shadow",
+          "headline",
+          "double-cross",
+          "lead",
+          "snitch",
+          "fedora"
         ],
         "adjective": [
-          "crooked", "rain-soaked", "two-bit", "smoke-stained", "restless",
-          "broke", "cold-blooded", "tired", "neon-lit", "half-honest"
+          "crooked",
+          "rain-soaked",
+          "two-bit",
+          "smoke-stained",
+          "restless",
+          "broke",
+          "cold-blooded",
+          "tired",
+          "neon-lit",
+          "half-honest",
+          "hardboiled",
+          "fatal"
         ],
         "verb": [
-          "tail the suspect", "torch the alibi", "spill the truth", "case the joint",
-          "skip town", "take the fall", "follow the money", "fold the hand",
-          "light a cigarette", "make the call"
+          "tail the suspect",
+          "torch the alibi",
+          "spill the truth",
+          "case the joint",
+          "skip town",
+          "take the fall",
+          "follow the money",
+          "fold the hand",
+          "light a cigarette",
+          "make the call",
+          "pull the trigger"
         ],
         "adverb": [
-          "at midnight", "in the rain", "without flinching", "real slow",
-          "before the cops came", "for a price", "like always"
+          "at midnight",
+          "in the rain",
+          "without flinching",
+          "real slow",
+          "before the cops came",
+          "for a price",
+          "like always",
+          "in cold blood"
         ],
         "place": [
-          "a dim-lit bar", "the wrong side of town", "the precinct",
-          "a rented room", "the docks at night", "the back of a cab",
-          "the last booth"
+          "a dim-lit bar",
+          "the wrong side of town",
+          "the precinct",
+          "a rented room",
+          "the docks at night",
+          "the back of a cab",
+          "the last booth",
+          "an alleyway"
         ]
       },
       "templates": [
         "The {noun} was {adjective}, the kind that makes a man {verb}.",
         "In {place}, every {noun} learns to {verb} {adverb}.",
-        "She had a {adjective} {noun} and a reason to {verb}."
+        "She had a {adjective} {noun} and a reason to {verb}.",
+        "The {noun} was a dead end, leaving me to {verb} in {place}.",
+        "It took one {adjective} {noun} to {verb}.",
+        "The {noun} was a setup, designed to make me {verb} {adverb}.",
+        "You don't {verb} a {adjective} {noun} without making enemies.",
+        "I found the {noun} in {place}, looking exactly as {adjective} as I expected.",
+        "Sometimes a {adjective} {noun} is the only reason to {verb}.",
+        "He left the {noun} in {place}, hoping it would {verb}."
+      ]
+    },
+    {
+      "id": "academic",
+      "label": "Academia",
+      "blurb": "Publish, perish, and cry over Reviewer 2.",
+      "words": {
+        "noun": [
+          "thesis",
+          "citation",
+          "Reviewer 2",
+          "grant proposal",
+          "postdoc",
+          "abstract",
+          "tenure track",
+          "hypothesis",
+          "methodology",
+          "committee",
+          "adjunct",
+          "impact factor",
+          "deadline"
+        ],
+        "adjective": [
+          "peer-reviewed",
+          "novel",
+          "groundbreaking",
+          "rejected",
+          "overdue",
+          "derivative",
+          "underfunded",
+          "statistically significant",
+          "flawed",
+          "exhausted"
+        ],
+        "verb": [
+          "plagiarize",
+          "defend",
+          "publish",
+          "procrastinate",
+          "cite",
+          "revise and resubmit",
+          "peer-review",
+          "drop out",
+          "extend the deadline",
+          "fabricate data"
+        ],
+        "adverb": [
+          "in APA format",
+          "without funding",
+          "hypothetically",
+          "in the appendix",
+          "pending review",
+          "with a heavy sigh",
+          "before the defense"
+        ],
+        "place": [
+          "the lab at 3 AM",
+          "the conference poster session",
+          "a predatory journal",
+          "the department lounge",
+          "the university archives",
+          "Google Scholar"
+        ]
+      },
+      "templates": [
+        "The {adjective} {noun} was rejected {adverb}.",
+        "I tried to {verb} my {noun}, but {place} was closed.",
+        "According to {place}, the {noun} is highly {adjective}.",
+        "You can't just {verb} a {noun} and expect tenure.",
+        "Reviewer 2 found the {noun} {adjective} and told us to {verb}.",
+        "My advisor wants the {noun} to be more {adjective} before we {verb}.",
+        "I stayed up all night trying to {verb} the {adjective} {noun}.",
+        "A {adjective} {noun} is no excuse to {verb} {adverb}.",
+        "The literature suggests the {noun} will {verb} in {place}.",
+        "Never {verb} your {noun} {adverb}, especially near {place}."
+      ]
+    },
+    {
+      "id": "cyberpunk",
+      "label": "Cyberpunk",
+      "blurb": "High tech, low life, and neon-lit mainframes.",
+      "words": {
+        "noun": [
+          "mainframe",
+          "cyborg",
+          "AI",
+          "neural link",
+          "hacker",
+          "megacorp",
+          "synth",
+          "credit chip",
+          "firewall",
+          "data shard",
+          "black market",
+          "hovercar",
+          "implant"
+        ],
+        "adjective": [
+          "glitching",
+          "neon-lit",
+          "cybernetic",
+          "dystopian",
+          "corrupt",
+          "encrypted",
+          "holographic",
+          "rogue",
+          "black-market",
+          "chrome"
+        ],
+        "verb": [
+          "hack",
+          "jack in",
+          "upload",
+          "bypass",
+          "reboot",
+          "override",
+          "glitch",
+          "decrypt",
+          "fry the mainframe",
+          "flatline"
+        ],
+        "adverb": [
+          "in the metaverse",
+          "on the dark web",
+          "at lightspeed",
+          "offline",
+          "under the neon glow",
+          "past the firewall",
+          "with a custom rig"
+        ],
+        "place": [
+          "the neon slums",
+          "an orbiting space station",
+          "sector 4",
+          "the VR simulation",
+          "a chop shop",
+          "the corporate arcology"
+        ]
+      },
+      "templates": [
+        "The {adjective} {noun} tried to {verb} {place}.",
+        "Never {verb} a {noun} {adverb}.",
+        "In {place}, your {noun} is only as {adjective} as your credits.",
+        "They tried to {verb} my {noun}, but it was too {adjective}.",
+        "A rogue {noun} managed to {verb} the entire system {adverb}.",
+        "The {noun} is heavily {adjective}, so you'll have to {verb} {adverb}.",
+        "I lost my best {noun} trying to {verb} in {place}.",
+        "If the {noun} starts to {verb}, disconnect from {place} immediately.",
+        "A {adjective} {noun} on the black market could help us {verb}.",
+        "Welcome to {place}, where every {noun} wants to {verb} you."
+      ]
+    },
+    {
+      "id": "gaming",
+      "label": "Gamer",
+      "blurb": "Lag, loot, and carrying the whole squad.",
+      "words": {
+        "noun": [
+          "noob",
+          "loot drop",
+          "boss phase",
+          "ping",
+          "rage-quit",
+          "spawn camper",
+          "healer",
+          "DPS",
+          "hitbox",
+          "skill tree",
+          "side quest",
+          "microtransaction"
+        ],
+        "adjective": [
+          "nerfed",
+          "OP",
+          "laggy",
+          "toxic",
+          "sweaty",
+          "cracked",
+          "AFK",
+          "pay-to-win",
+          "broken",
+          "tryhard"
+        ],
+        "verb": [
+          "carry",
+          "respawn",
+          "loot",
+          "gank",
+          "speedrun",
+          "clip",
+          "alt-f4",
+          "throw the match",
+          "teabag",
+          "grind"
+        ],
+        "adverb": [
+          "in the lobby",
+          "on 1 HP",
+          "with auto-aim",
+          "during the cutscene",
+          "without a mic",
+          "in competitive mode",
+          "for the XP"
+        ],
+        "place": [
+          "the gulag",
+          "the spawn point",
+          "a Discord call",
+          "the final boss room",
+          "the tutorial area",
+          "the leaderboard",
+          "a toxic lobby"
+        ]
+      },
+      "templates": [
+        "Bro really tried to {verb} the {noun} {adverb}.",
+        "The {adjective} {noun} is camping in {place} again.",
+        "I can't {verb} because my {noun} is too {adjective}!",
+        "Imagine losing to a {adjective} {noun} in {place}.",
+        "We need to {verb} before the {noun} gets {adjective}.",
+        "Who let the {adjective} {noun} {verb} in {place}?",
+        "I had to {verb} the {noun} {adverb} just to survive.",
+        "This {noun} is so {adjective}, I might just {verb}.",
+        "Watch out for the {noun} trying to {verb} {adverb}.",
+        "Getting a {adjective} {noun} in {place} is impossible unless you {verb}."
       ]
     }
   ]
