@@ -3,6 +3,9 @@
 @theme {
   --font-mono: ui-monospace, "SF Mono", "JetBrains Mono", Menlo, Consolas,
     monospace;
+
+  /* Brand accent — reusable as text-brand / bg-brand / border-brand, etc. */
+  --color-brand: #f59e0b;
 }
 
 /* Black, monospaced, minimal. */
