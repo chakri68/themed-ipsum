@@ -2,12 +2,104 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>themed-ipsum</title>
+    <title>Themed Ipsum</title>
   </head>
   <body>
-    <div id="app"></div>
+    <div
+      id="loader"
+      class="fixed inset-0 z-10 flex items-center justify-center bg-black font-mono text-sm text-neutral-500 transition-opacity duration-300"
+    >
+      <span class="ascii-spinner">loading</span>
+    </div>
+    <main
+      class="min-h-screen bg-black text-neutral-300 font-mono flex flex-col items-center px-5 py-12 sm:py-20"
+    >
+      <div class="w-full max-w-2xl">
+        <header class="mb-10">
+          <h1 class="text-2xl font-bold text-neutral-100 tracking-tight">
+            themed_ipsum
+          </h1>
+          <p class="mt-1 text-sm text-neutral-500">
+            lorem ipsum, but it sounds like your brain at 2 AM.
+          </p>
+        </header>
+
+        <form id="controls" class="grid grid-cols-2 sm:grid-cols-4 gap-4 items-end">
+          <label class="col-span-2 sm:col-span-2">
+            <span class="block text-xs uppercase tracking-widest text-neutral-500 mb-2">
+              Theme
+            </span>
+            <select
+              id="theme"
+              class="w-full bg-black border border-neutral-800 px-3 py-2 text-sm text-neutral-100 focus:outline-none focus:border-neutral-500 transition-colors"
+            ></select>
+          </label>
+
+          <label>
+            <span class="block text-xs uppercase tracking-widest text-neutral-500 mb-2">
+              Paras
+            </span>
+            <input
+              id="paragraphs"
+              type="number"
+              min="1"
+              max="20"
+              value="3"
+              class="w-full bg-black border border-neutral-800 px-3 py-2 text-sm text-neutral-100 focus:outline-none focus:border-neutral-500 transition-colors"
+            />
+          </label>
+
+          <label>
+            <span class="block text-xs uppercase tracking-widest text-neutral-500 mb-2">
+              Sent/para
+            </span>
+            <input
+              id="sentences"
+              type="number"
+              min="1"
+              max="12"
+              value="4"
+              class="w-full bg-black border border-neutral-800 px-3 py-2 text-sm text-neutral-100 focus:outline-none focus:border-neutral-500 transition-colors"
+            />
+          </label>
+
+          <button
+            id="generate"
+            type="submit"
+            class="col-span-2 sm:col-span-4 mt-1 border border-neutral-100 bg-neutral-100 text-black px-4 py-2 text-sm font-bold uppercase tracking-widest hover:bg-black hover:text-neutral-100 active:translate-y-px transition-colors"
+          >
+            Generate
+          </button>
+        </form>
+
+        <p id="blurb" class="mt-4 text-xs text-neutral-600"></p>
+
+        <section class="mt-8 border border-neutral-800">
+          <div
+            class="flex items-center justify-between px-4 py-2 border-b border-neutral-800"
+          >
+            <span id="meta" class="text-xs uppercase tracking-widest text-neutral-600"></span>
+            <button
+              id="copy"
+              type="button"
+              class="text-xs uppercase tracking-widest text-neutral-400 hover:text-neutral-100 transition-colors"
+            >
+              Copy text
+            </button>
+          </div>
+          <article
+            id="output"
+            aria-live="polite"
+            class="px-5 py-5 text-sm leading-7 text-neutral-300 space-y-4"
+          ></article>
+        </section>
+      </div>
+    </main>
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>

@@ -1,60 +1,118 @@
-import './style.css'
-import typescriptLogo from './assets/typescript.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
-import { setupCounter } from './counter.ts'
+import "./style.css";
+import { ThemedIpsum } from "./generator.ts";
+import { getTheme, loadContent, type Content } from "./themes.ts";
 
-document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
-<section id="center">
-  <div class="hero">
-    <img src="${heroImg}" class="base" width="170" height="179">
-    <img src="${typescriptLogo}" class="framework" alt="TypeScript logo"/>
-    <img src="${viteLogo}" class="vite" alt="Vite logo" />
-  </div>
-  <div>
-    <h1>Get started</h1>
-    <p>Edit <code>src/main.ts</code> and save to test <code>HMR</code></p>
-  </div>
-  <button id="counter" type="button" class="counter"></button>
-</section>
+// Markup lives in index.html; JS only wires up the dynamic bits.
+const themeSelect = document.querySelector<HTMLSelectElement>("#theme")!;
+const paragraphsInput = document.querySelector<HTMLInputElement>("#paragraphs")!;
+const sentencesInput = document.querySelector<HTMLInputElement>("#sentences")!;
+const blurb = document.querySelector<HTMLElement>("#blurb")!;
+const meta = document.querySelector<HTMLElement>("#meta")!;
+const output = document.querySelector<HTMLElement>("#output")!;
+const form = document.querySelector<HTMLFormElement>("#controls")!;
+const copyBtn = document.querySelector<HTMLButtonElement>("#copy")!;
 
-<div class="ticks"></div>
+const loader = document.querySelector<HTMLDivElement>("#loader")!;
 
-<section id="next-steps">
-  <div id="docs">
-    <svg class="icon" role="presentation" aria-hidden="true"><use href="/icons.svg#documentation-icon"></use></svg>
-    <h2>Documentation</h2>
-    <p>Your questions, answered</p>
-    <ul>
-      <li>
-        <a href="https://vite.dev/" target="_blank">
-          <img class="logo" src="${viteLogo}" alt="" />
-          Explore Vite
-        </a>
-      </li>
-      <li>
-        <a href="https://www.typescriptlang.org" target="_blank">
-          <img class="button-icon" src="${typescriptLogo}" alt="">
-          Learn more
-        </a>
-      </li>
-    </ul>
-  </div>
-  <div id="social">
-    <svg class="icon" role="presentation" aria-hidden="true"><use href="/icons.svg#social-icon"></use></svg>
-    <h2>Connect with us</h2>
-    <p>Join the Vite community</p>
-    <ul>
-      <li><a href="https://github.com/vitejs/vite" target="_blank"><svg class="button-icon" role="presentation" aria-hidden="true"><use href="/icons.svg#github-icon"></use></svg>GitHub</a></li>
-      <li><a href="https://chat.vite.dev/" target="_blank"><svg class="button-icon" role="presentation" aria-hidden="true"><use href="/icons.svg#discord-icon"></use></svg>Discord</a></li>
-      <li><a href="https://x.com/vite_js" target="_blank"><svg class="button-icon" role="presentation" aria-hidden="true"><use href="/icons.svg#x-icon"></use></svg>X.com</a></li>
-      <li><a href="https://bsky.app/profile/vite.dev" target="_blank"><svg class="button-icon" role="presentation" aria-hidden="true"><use href="/icons.svg#bluesky-icon"></use></svg>Bluesky</a></li>
-    </ul>
-  </div>
-</section>
+// Keep the loader up for at least this long so a fast fetch doesn't make it
+// flash in and out.
+const MIN_LOADER_MS = 500;
+const loaderShownAt = performance.now();
 
-<div class="ticks"></div>
-<section id="spacer"></section>
-`
+/** Fade out and remove the loading overlay, respecting the minimum display time. */
+function dismissLoader(): void {
+  const remaining = MIN_LOADER_MS - (performance.now() - loaderShownAt);
+  window.setTimeout(() => {
+    loader.style.opacity = "0";
+    loader.addEventListener("transitionend", () => loader.remove(), {
+      once: true,
+    });
+  }, Math.max(0, remaining));
+}
 
-setupCounter(document.querySelector<HTMLButtonElement>('#counter')!)
+// Themes and templates are fetched from public/content.json at runtime.
+let content: Content;
+try {
+  content = await loadContent();
+} catch (err) {
+  loader.innerHTML =
+    '<span class="text-neutral-500">failed to load content.</span>';
+  throw err;
+}
+
+// Populate the theme dropdown from the loaded data.
+themeSelect.append(...content.themes.map((t) => new Option(t.label, t.id)));
+
+/** Clamp a numeric input to its [min, max] bounds, falling back to a default. */
+function readNumber(input: HTMLInputElement, fallback: number): number {
+  const min = Number(input.min);
+  const max = Number(input.max);
+  const value = Number(input.value);
+  if (!Number.isFinite(value)) return fallback;
+  return Math.min(max, Math.max(min, Math.round(value)));
+}
+
+function updateBlurb(): void {
+  blurb.textContent = getTheme(content, themeSelect.value)?.blurb ?? "";
+}
+
+function generate(): void {
+  const theme = getTheme(content, themeSelect.value);
+  if (!theme) return;
+
+  const paragraphs = readNumber(paragraphsInput, 3);
+  const sentences = readNumber(sentencesInput, 4);
+
+  const generator = new ThemedIpsum(theme, content.sharedTemplates);
+  const paras = generator.generate({
+    paragraphs,
+    sentencesPerParagraph: sentences,
+  });
+
+  output.innerHTML = paras.map((p) => `<p>${p}</p>`).join("");
+  meta.textContent = `${generator.themeLabel} · ${paragraphs} paragraph${
+    paragraphs === 1 ? "" : "s"
+  }`;
+}
+
+async function copyText(): Promise<void> {
+  const text = output.innerText.trim();
+  if (!text) return;
+  try {
+    await navigator.clipboard.writeText(text);
+    flashCopied("Copied!");
+  } catch {
+    // Fallback for non-secure contexts where the Clipboard API is unavailable.
+    const range = document.createRange();
+    range.selectNodeContents(output);
+    const selection = window.getSelection();
+    selection?.removeAllRanges();
+    selection?.addRange(range);
+    flashCopied(document.execCommand("copy") ? "Copied!" : "Copy failed");
+    selection?.removeAllRanges();
+  }
+}
+
+let copyResetTimer: number | undefined;
+function flashCopied(label: string): void {
+  copyBtn.textContent = label;
+  window.clearTimeout(copyResetTimer);
+  copyResetTimer = window.setTimeout(() => {
+    copyBtn.textContent = "Copy text";
+  }, 1500);
+}
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  generate();
+});
+themeSelect.addEventListener("change", () => {
+  updateBlurb();
+  generate();
+});
+copyBtn.addEventListener("click", copyText);
+
+// First render, then reveal the app.
+updateBlurb();
+generate();
+dismissLoader();

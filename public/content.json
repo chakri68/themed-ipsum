@@ -1,0 +1,253 @@
+{
+  "sharedTemplates": [
+    "The {noun} was too {adjective} to {verb}.",
+    "In the middle of {place}, a {noun} decided to {verb}.",
+    "{noun} energy is just {adjective} {noun} behaviour.",
+    "Nobody warned me the {noun} would {verb} so {adverb}.",
+    "Somewhere in {place}, a {adjective} {noun} learned to {verb}.",
+    "Every {noun} eventually has to {verb}, {adverb}.",
+    "They told the {noun} to {verb}, but it stayed {adjective}.",
+    "A {adjective} {noun} is still a {noun} at the end of the day.",
+    "I tried to {verb}, but {place} had other plans.",
+    "Honestly? The {noun} just wanted to {verb} {adverb}."
+  ],
+  "themes": [
+    {
+      "id": "dev",
+      "label": "Dev life",
+      "blurb": "Standups, deploys, and the cache that never clears.",
+      "words": {
+        "noun": [
+          "deploy", "bug", "cache", "backend", "frontend", "merge conflict",
+          "pull request", "intern", "linter", "stack trace", "race condition",
+          "hotfix", "rollback", "staging server", "rubber duck"
+        ],
+        "adjective": [
+          "flaky", "deprecated", "undocumented", "legacy", "async",
+          "blocking", "over-engineered", "unhinged", "production-ready", "cursed"
+        ],
+        "verb": [
+          "deploy", "refactor", "rollback", "compile", "merge", "ship",
+          "git blame", "force-push", "rebase", "yeet to prod", "ssh in"
+        ],
+        "adverb": [
+          "silently", "in production", "on a Friday", "without tests",
+          "at 2 AM", "with confidence", "somehow"
+        ],
+        "place": [
+          "the staging server", "a forgotten repo", "the CI pipeline",
+          "main branch", "the standup", "node_modules", "the incident channel"
+        ]
+      },
+      "templates": [
+        "It works on {place}, so we shipped it {adverb}.",
+        "The {noun} passed review, then chose to {verb} {adverb}.",
+        "Reverted the {noun}; turns out {place} was {adjective}."
+      ]
+    },
+    {
+      "id": "existential",
+      "label": "Existential",
+      "blurb": "Lorem ipsum, but it stares into the void with you.",
+      "words": {
+        "noun": [
+          "moon", "silence", "void", "memory", "dream", "dust", "echo",
+          "shadow", "tide", "horizon", "stranger", "ache", "ember", "stillness"
+        ],
+        "adjective": [
+          "cosmic", "weightless", "fading", "infinite", "hollow", "quiet",
+          "tender", "unhinged", "borrowed", "endless", "half-remembered"
+        ],
+        "verb": [
+          "disappear", "drift", "dissolve", "remember", "let go", "wander",
+          "unravel", "surrender", "begin again", "forget", "exhale"
+        ],
+        "adverb": [
+          "slowly", "eventually", "without warning", "all at once", "gently",
+          "in the dark", "for no reason"
+        ],
+        "place": [
+          "the edge of sleep", "a quiet ocean", "the space between stars",
+          "an empty room", "the last hour of night", "nowhere in particular"
+        ]
+      },
+      "templates": [
+        "The {noun} does not ask to {verb}; it simply does.",
+        "Between the {noun} and the {noun}, only {place} remains.",
+        "We are all just {adjective} {noun}, learning to {verb}."
+      ]
+    },
+    {
+      "id": "desi",
+      "label": "Desi",
+      "blurb": "Chai, autos, monsoons, and a signal that never comes.",
+      "words": {
+        "noun": [
+          "chai", "auto", "biryani", "hostel", "monsoon", "signal", "uncle",
+          "ration", "scooty", "samosa", "load-shedding", "wedding", "neighbour",
+          "WhatsApp forward", "watchman"
+        ],
+        "adjective": [
+          "dramatic", "overcooked", "sleepy", "extra", "jugaad", "spicy",
+          "monsoon-soaked", "unhinged", "filmy", "over-caffeinated"
+        ],
+        "verb": [
+          "vibe", "honk", "negotiate", "disappear", "gossip", "marinate",
+          "queue up", "argue", "bargain", "show up uninvited", "overthink"
+        ],
+        "adverb": [
+          "dramatically", "before lunch", "during the power cut", "as always",
+          "with full masala", "at the wedding", "loudly"
+        ],
+        "place": [
+          "Bangalore traffic", "the hostel corridor", "the chai tapri",
+          "a sweaty local train", "the society WhatsApp group",
+          "the back of an auto", "a wedding buffet"
+        ]
+      },
+      "templates": [
+        "The {noun} at {place} was {adjective}, naturally.",
+        "Uncle saw the {noun} and decided to {verb} {adverb}.",
+        "Only in {place} can a {noun} be this {adjective}."
+      ]
+    },
+    {
+      "id": "corporate",
+      "label": "Corporate",
+      "blurb": "Let's circle back and synergize on this offline.",
+      "words": {
+        "noun": [
+          "synergy", "stakeholder", "roadmap", "deck", "KPI", "deliverable",
+          "bandwidth", "low-hanging fruit", "alignment", "touchpoint", "north star",
+          "all-hands", "quick win", "value-add", "action item"
+        ],
+        "adjective": [
+          "scalable", "actionable", "cross-functional", "results-driven",
+          "best-in-class", "agile", "data-driven", "mission-critical",
+          "frictionless", "holistic"
+        ],
+        "verb": [
+          "circle back", "leverage", "ideate", "operationalize", "double-click",
+          "socialize", "right-size", "unpack", "move the needle", "loop in",
+          "take offline"
+        ],
+        "adverb": [
+          "going forward", "at scale", "by EOD", "holistically", "proactively",
+          "at a high level", "in this economy"
+        ],
+        "place": [
+          "the Q3 roadmap", "the parking lot", "a breakout room",
+          "the all-hands", "the shared drive", "next sprint", "the steering committee"
+        ]
+      },
+      "templates": [
+        "Let's {verb} on the {noun} {adverb}.",
+        "Per my last email, the {noun} remains {adjective}.",
+        "We need to {verb} before we can {verb} the {noun}."
+      ]
+    },
+    {
+      "id": "genz",
+      "label": "Gen Z",
+      "blurb": "It's giving unhinged. No cap, this one ate.",
+      "words": {
+        "noun": [
+          "rizz", "vibe", "main character", "icon", "situationship", "aura",
+          "glow-up", "red flag", "soft launch", "delulu", "NPC", "side quest",
+          "ick", "lore", "beige flag"
+        ],
+        "adjective": [
+          "iconic", "unhinged", "lowkey", "valid", "feral", "mid", "ate",
+          "demure", "delulu", "bussin"
+        ],
+        "verb": [
+          "slay", "ghost", "gatekeep", "manifest", "spiral", "vibe check",
+          "touch grass", "rizz up", "soft launch", "live laugh love", "understand the assignment"
+        ],
+        "adverb": [
+          "fr fr", "no cap", "lowkey", "highkey", "respectfully", "in this essay",
+          "and it shows"
+        ],
+        "place": [
+          "the group chat", "my fyp", "the comments", "a random Tuesday",
+          "her finsta", "the vibe", "the timeline"
+        ]
+      },
+      "templates": [
+        "Not the {noun} being this {adjective} {adverb}.",
+        "The {noun} is giving {adjective}, {adverb}.",
+        "It's the {adjective} {noun} for me, {adverb}."
+      ]
+    },
+    {
+      "id": "fantasy",
+      "label": "Fantasy",
+      "blurb": "Of dragons, prophecies, and the long road to the keep.",
+      "words": {
+        "noun": [
+          "prophecy", "dragon", "blade", "kingdom", "oath", "shadow", "relic",
+          "wanderer", "throne", "rune", "wyrm", "tavern", "omen", "spellbook",
+          "crown"
+        ],
+        "adjective": [
+          "ancient", "cursed", "forsaken", "weary", "ironbound", "fabled",
+          "doomed", "valiant", "sundered", "moonlit"
+        ],
+        "verb": [
+          "ride north", "draw steel", "break the siege", "swear the oath",
+          "betray the crown", "wake the dragon", "cross the marches", "kindle the beacon",
+          "ford the river", "hold the line"
+        ],
+        "adverb": [
+          "at dawn", "before the frost", "without mercy", "ere the moon rose",
+          "in the old tongue", "for the realm", "come what may"
+        ],
+        "place": [
+          "the Ironwood", "a ruined keep", "the misty marches",
+          "the dragon's hoard", "the last tavern", "the frozen pass",
+          "the shadowed vale"
+        ]
+      },
+      "templates": [
+        "The {adjective} {noun} called them to {verb} {adverb}.",
+        "In {place}, a {noun} would {verb}, {adverb}.",
+        "They say the {noun} is {adjective}, but still it must {verb}."
+      ]
+    },
+    {
+      "id": "noir",
+      "label": "Noir",
+      "blurb": "She walked in like trouble in a rain-soaked coat.",
+      "words": {
+        "noun": [
+          "dame", "case", "alibi", "cigarette", "whiskey", "detective", "racket",
+          "informant", "trench coat", "revolver", "shadow", "headline",
+          "double-cross", "lead"
+        ],
+        "adjective": [
+          "crooked", "rain-soaked", "two-bit", "smoke-stained", "restless",
+          "broke", "cold-blooded", "tired", "neon-lit", "half-honest"
+        ],
+        "verb": [
+          "tail the suspect", "torch the alibi", "spill the truth", "case the joint",
+          "skip town", "take the fall", "follow the money", "fold the hand",
+          "light a cigarette", "make the call"
+        ],
+        "adverb": [
+          "at midnight", "in the rain", "without flinching", "real slow",
+          "before the cops came", "for a price", "like always"
+        ],
+        "place": [
+          "a dim-lit bar", "the wrong side of town", "the precinct",
+          "a rented room", "the docks at night", "the back of a cab",
+          "the last booth"
+        ]
+      },
+      "templates": [
+        "The {noun} was {adjective}, the kind that makes a man {verb}.",
+        "In {place}, every {noun} learns to {verb} {adverb}.",
+        "She had a {adjective} {noun} and a reason to {verb}."
+      ]
+    }
+  ]
+}
