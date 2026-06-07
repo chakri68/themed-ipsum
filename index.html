@@ -8,6 +8,59 @@
     <link rel="manifest" href="/site.webmanifest" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Themed Ipsum</title>
+    <script>
+      (function () {
+        // Only accept theming from your ROM Shelf origin(s). Add localhost for dev.
+        var ALLOWED = ["chakri.me", "localhost:"];
+
+        function applySkin(s) {
+          if (!s) return;
+
+          if (s.fontHref && !document.getElementById("gb-skin-font")) {
+            const link = document.createElement("link");
+            link.id = "gb-skin-font";
+            link.rel = "stylesheet";
+            link.href = s.fontHref;
+            document.head.appendChild(link);
+          }
+
+          const css = `
+    html, body {
+      ${s.bg ? `background-color: ${s.bg} !important;` : ""}
+      ${s.fg ? `color: ${s.fg} !important;` : ""}
+      ${s.fontFamily ? `font-family: ${s.fontFamily} !important;` : ""}
+    }
+
+    body * {
+    ${s.bg ? `background-color: ${s.bg} !important;` : ""}
+      ${s.fg ? `color: ${s.fg};` : ""}
+      ${s.fontFamily ? `font-family: ${s.fontFamily};` : ""}
+    }
+  `;
+
+          const style =
+            document.getElementById("gb-skin-style") ||
+            document.createElement("style");
+
+          style.id = "gb-skin-style";
+          style.textContent = css;
+          document.head.appendChild(style);
+        }
+
+        window.addEventListener("message", function (e) {
+          console.log("Hello");
+          console.log({ or: e.origin });
+          if (ALLOWED.filter((a) => e.origin.includes(a)).length == 0) return;
+          var d = e.data;
+          if (d && d.type === "gb-screen-skin") applySkin(d);
+        });
+
+        // Tell the parent we're ready, in case it posted before this listener existed.
+        try {
+          parent.postMessage({ type: "gb-screen-ready" }, "*");
+        } catch (_) {}
+      })();
+    </script>
   </head>
   <body>
     <div
@@ -29,9 +82,14 @@
           </p>
         </header>
 
-        <form id="controls" class="grid grid-cols-2 sm:grid-cols-4 gap-4 items-end">
+        <form
+          id="controls"
+          class="grid grid-cols-2 sm:grid-cols-4 gap-4 items-end"
+        >
           <label class="col-span-2 sm:col-span-2">
-            <span class="block text-xs uppercase tracking-widest text-neutral-500 mb-2">
+            <span
+              class="block text-xs uppercase tracking-widest text-neutral-500 mb-2"
+            >
               Theme
             </span>
             <select
@@ -41,7 +99,9 @@
           </label>
 
           <label>
-            <span class="block text-xs uppercase tracking-widest text-neutral-500 mb-2">
+            <span
+              class="block text-xs uppercase tracking-widest text-neutral-500 mb-2"
+            >
               Paras
             </span>
             <input
@@ -55,7 +115,9 @@
           </label>
 
           <label>
-            <span class="block text-xs uppercase tracking-widest text-neutral-500 mb-2">
+            <span
+              class="block text-xs uppercase tracking-widest text-neutral-500 mb-2"
+            >
               Sent/para
             </span>
             <input
@@ -83,7 +145,10 @@
           <div
             class="flex items-center justify-between px-4 py-2 border-b border-neutral-800"
           >
-            <span id="meta" class="text-xs uppercase tracking-widest text-neutral-600"></span>
+            <span
+              id="meta"
+              class="text-xs uppercase tracking-widest text-neutral-600"
+            ></span>
             <button
               id="copy"
               type="button"
